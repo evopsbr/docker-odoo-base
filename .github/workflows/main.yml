@@ -30,4 +30,4 @@
 #         uses: docker/build-push-action@v2
 #         with:
 #           push: true
-#           tags: trustcode/docker-odoo-base:15.0
+#           tags: paloschisistemas/docker-odoo-base:17.0
