@@ -7,9 +7,13 @@ RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
 
 	##### Dependências #####
 
-RUN apt-get update
+RUN apt update && apt install gnupg2 wget curl -y
 
 ADD conf/apt-requirements /opt/sources/
+
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt jammy-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+RUN curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
+RUN apt update && apt install postgresql-client-16 -y
 
 WORKDIR /opt/sources/
 RUN apt-get install -y --no-install-recommends $(grep -v '^#' apt-requirements)
