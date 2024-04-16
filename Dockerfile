@@ -57,3 +57,4 @@ RUN mkdir /var/log/odoo && \
 ##### Finalização do Container #####
 
 WORKDIR /opt/odoo
+
