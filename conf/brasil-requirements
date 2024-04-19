@@ -1,0 +1,14 @@
+# odoo-brasil
+suds-jurko-requests
+xmlsec
+
+# addons
+urllib3==1.22
+pyopenssl==20.0.1
+
+# Atualizacao
+click-odoo-contrib
+
+# Sentry
+sentry-sdk
+raven
